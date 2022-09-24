@@ -1,0 +1,5 @@
+C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/CMakeFiles/DelfosEngine.dir
+C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/CMakeFiles/edit_cache.dir
+C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/CMakeFiles/rebuild_cache.dir
