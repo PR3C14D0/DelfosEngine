@@ -59,3 +59,5 @@
 1003	1133	6858246904448389	src/DelfosEngine.exe	163e16c1e3b43036
 2	1154	6858247949973977	src/CMakeFiles/DelfosEngine.dir/main.cpp.obj	b898ea466115af95
 1155	1343	6858247951555422	src/DelfosEngine.exe	163e16c1e3b43036
+2	1081	6858254543290903	src/CMakeFiles/DelfosEngine.dir/private/Engine/GameObject/GameObject.cpp.obj	57157b649dcf83cf
+1082	1403	6858254545302734	src/DelfosEngine.exe	163e16c1e3b43036
