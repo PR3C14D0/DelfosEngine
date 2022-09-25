@@ -9,6 +9,8 @@ Core::Core() {
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 	SDL_GL_MakeCurrent(this->window, this->context);
 
+	this->sceneMgr = SceneManager(this->window, this->width, this->height);
+
 	MainLoop();
 }
 
@@ -26,6 +28,7 @@ void Core::MainLoop() {
 			}
 		}
 		SDL_GetWindowSize(this->window, &width, &height);
+		this->sceneMgr.LoadScene();
 	}
 	SDL_Quit();
 	return;

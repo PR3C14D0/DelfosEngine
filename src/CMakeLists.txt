@@ -4,7 +4,7 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Agregue un origen al ejecutable de este proyecto.
-add_executable (DelfosEngine main.cpp "public/Core/Core.h" "private/Core/Core.cpp" "private/Math/Vector/Vector3.cpp" "private/Math/Vector/Vector3.cpp" "public/Engine/GameObject/GameObject.h" "public/Math/Transform/Transform.h" "private/Math/Transform/Transform.cpp" "private/Engine/GameObject/GameObject.cpp" "public/Engine/Scene/SceneManager.h" "private/Engine/Scene/SceneManager.cpp" "public/Engine/Project/ProjectManager.h" "private/Engine/Project/ProjectManager.cpp" "public/Engine/Scene/Scene.h" "private/Engine/Scene/Scene.cpp" "public/Math/Vector/Vector2.h" "private/Math/Vector/Vector2.cpp")
+add_executable (DelfosEngine main.cpp "public/Core/Core.h" "private/Core/Core.cpp" "private/Math/Vector/Vector3.cpp" "private/Math/Vector/Vector3.cpp" "public/Engine/GameObject/GameObject.h" "public/Math/Transform/Transform.h"   "private/Math/Transform/Transform.cpp" "private/Engine/GameObject/GameObject.cpp"   "public/Engine/Project/ProjectManager.h" "private/Engine/Project/ProjectManager.cpp" "public/Math/Vector/Vector2.h" "private/Math/Vector/Vector2.cpp" "public/Engine/Scene/Scene.h" "private/Engine/Scene/Scene.cpp" "public/Engine/Scene/SceneManager.h" "private/Engine/Scene/SceneManager.cpp" )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET DelfosEngine PROPERTY CXX_STANDARD 20)
