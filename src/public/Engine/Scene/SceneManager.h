@@ -7,8 +7,10 @@ private:
 
 	Scene defScene;
 	Scene actualScene;
+	vector<Scene> projectScenes;
 public:
 	SceneManager() {};
 	SceneManager(SDL_Window* window, int& width, int& height);
-	void LoadScene();
+	void Render(float deltaTime);
+	void ChangeScene(string name);
 };

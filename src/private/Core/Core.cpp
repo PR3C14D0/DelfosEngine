@@ -7,7 +7,11 @@ Core::Core() {
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 8);
 	SDL_GL_MakeCurrent(this->window, this->context);
+
+	glewInit();
 
 	this->sceneMgr = SceneManager(this->window, this->width, this->height);
 
@@ -16,7 +20,10 @@ Core::Core() {
 
 void Core::MainLoop() {
 	bool quit = false;
+	float actualFps, deltaTime, oldFps = 0.f;
 	while (!quit) {
+		actualFps = SDL_GetTicks();
+		deltaTime = actualFps - oldFps;
 		while (SDL_PollEvent(&event)) {
 			switch (event.type) {
 			case SDL_QUIT:
@@ -27,8 +34,11 @@ void Core::MainLoop() {
 				break;
 			}
 		}
+
 		SDL_GetWindowSize(this->window, &width, &height);
-		this->sceneMgr.LoadScene();
+		this->sceneMgr.Render(deltaTime);
+		cout << "FPS: " << (1000.f / deltaTime) << endl;
+		oldFps = actualFps;
 	}
 	SDL_Quit();
 	return;

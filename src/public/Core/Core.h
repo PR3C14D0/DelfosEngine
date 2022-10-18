@@ -1,9 +1,11 @@
 #pragma once
-#define GL_GLEXT_PROTOTYPES 1
 #include <iostream>
 #include <Windows.h>
+#include <GL/glew.h>
+
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
+
 #include <GL/GL.h>
 #include <GL/GLU.h>
 #include "Engine/Scene/SceneManager.h"

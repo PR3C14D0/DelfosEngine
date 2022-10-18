@@ -57,6 +57,17 @@ SceneManager::SceneManager(SDL_Window* window, int& width, int& height) {
 	this->actualScene = defScene;
 }
 
-void SceneManager::LoadScene() {
+void SceneManager::Render(float deltaTime) {
+	this->actualScene.Update(deltaTime);
 	this->actualScene.Render(this->window, this->width, this->height);
+}
+
+void SceneManager::ChangeScene(string name) {
+	for (Scene scene : projectScenes) {
+		if (scene.name == name) {
+			this->actualScene = scene;
+			break;
+		}
+	}
+	return;
 }
