@@ -9,6 +9,7 @@
 #include <GL/GL.h>
 #include <GL/GLU.h>
 #include "Engine/Scene/SceneManager.h"
+#include "Module/Input/Input.h"
 
 class Core {
 private:
@@ -24,4 +25,5 @@ private:
 
 public:
 	Core();
+	Input* input;
 };

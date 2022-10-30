@@ -6,54 +6,16 @@ SceneManager::SceneManager(SDL_Window* window, int& width, int& height) {
 	this->window = window;
 
 	this->defScene = Scene("DefaultScene");
-	
-	GameObject* sampleCube = new GameObject("Cube");
-	sampleCube->faces = {
-		{
-			Vector3(1.f, 1.f, 1.f),
-			Vector3(-1.f, 1.f, 1.f),
-			Vector3(-1.f, -1.f, 1.f),
-			Vector3(1.f, -1.f, 1.f),
-			Vector3(1.f, 0.f, 0.f)
-		},
-		{
-			Vector3(1.f, -1.f, -1.f),
-			Vector3(1.f, 1.f, -1.f),
-			Vector3(1.f, 1.f, 1.f),
-			Vector3(1.f, -1.f, 1.f),
-			Vector3(0.f, 1.f, 0.f)
-		},
-		{
-			Vector3(1.f, -1.f, 1.f),
-			Vector3(-1.f, -1.f, 1.f),
-			Vector3(-1.f, -1.f, -1.f),
-			Vector3(1.f, -1.f, -1.f),
-			Vector3(1.f, 1.f, 0.f)
-		},
-		{
-			Vector3(1.f, -1.f, -1.f),
-			Vector3(1.f, 1.f, -1.f),
-			Vector3(-1.f, 1.f, -1.f),
-			Vector3(-1.f, -1.f, -1.f),
-			Vector3(0.f, 0.f, 1.f)
-		},
-		{
-			Vector3(-1.f, 1.f, -1.f),
-			Vector3(-1.f, 1.f, 1.f),
-			Vector3(-1.f, -1.f, 1.f),
-			Vector3(-1.f, -1.f, -1.f),
-			Vector3(1.f, 0.f, 1.f)
-		},
-		{
-			Vector3(1.f, 1.f, 1.f),
-			Vector3(-1.f, 1.f, 1.f),
-			Vector3(-1.f, 1.f, -1.f),
-			Vector3(1.f, 1.f, -1.f),
-			Vector3(1.f, 1.f, 1.f)
-		}
-	};
-	this->defScene.AddObject(sampleCube);
-	sampleCube->transform->translate(0.f, 0.f, -10.f);
+
+	GameObject* asd = new GameObject("asd");
+
+	this->defScene.AddObject(asd);
+	asd->LoadModel("./f16.obj");
+	/*asd->vertex = {
+	0.f, 1.f, 0.0f,
+	1.f, -1.f, 0.0f,
+	-1.f,  -1.f, 0.0f
+	};*/
 	this->actualScene = defScene;
 }
 

@@ -1,6 +1,7 @@
 #include "Core/Core.h"
 
 Core::Core() {
+	this->input = Input::GetInstance();
 	SDL_Init(SDL_INIT_EVERYTHING);
 	this->window = SDL_CreateWindow("Delfos engine", 100, 100, this->width, this->height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 	this->context = SDL_GL_CreateContext(this->window);
@@ -26,6 +27,28 @@ void Core::MainLoop() {
 		deltaTime = actualFps - oldFps;
 		while (SDL_PollEvent(&event)) {
 			switch (event.type) {
+			case SDL_MOUSEBUTTONDOWN:
+				if (event.button.button == SDL_BUTTON_LEFT) {
+					input->SetButtonState(MouseInput::LCLICK_DOWN);
+				}
+				if (event.button.button == SDL_BUTTON_RIGHT) {
+					input->SetButtonState(MouseInput::RCLICK_DOWN);
+				}
+				break;
+			case SDL_MOUSEBUTTONUP:
+				if (event.button.button == SDL_BUTTON_LEFT) {
+					input->SetButtonState(MouseInput::LCLICK_UP);
+				}
+				if (event.button.button == SDL_BUTTON_RIGHT) {
+					input->SetButtonState(MouseInput::RCLICK_UP);
+				}
+				break;
+			case SDL_KEYDOWN:
+				input->SetKeyState(KeyboardInput::KEY_PRESSED, (char)SDL_GetKeyFromScancode(event.key.keysym.scancode));
+				break;
+			case SDL_KEYUP:
+				input->SetKeyState(KeyboardInput::KEY_RELEASED, (char)SDL_GetKeyFromScancode(event.key.keysym.scancode));
+				break;
 			case SDL_QUIT:
 				if (MessageBoxA(NULL, "Are you sure you want to close Delfos?", "Sure?", MB_OKCANCEL) == IDOK)
 					quit = true;
@@ -36,8 +59,9 @@ void Core::MainLoop() {
 		}
 
 		SDL_GetWindowSize(this->window, &width, &height);
-		this->sceneMgr.Render(deltaTime);
-		cout << "FPS: " << (1000.f / deltaTime) << endl;
+		this->sceneMgr.Render(deltaTime / 1000.f);
+		input->RemoveReleased();
+		//cout << "FPS: " << (1000.f / deltaTime) << endl;
 		oldFps = actualFps;
 	}
 	SDL_Quit();

@@ -78,6 +78,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 build cmake_object_order_depends_target_DelfosEngine: phony || src\CMakeFiles\DelfosEngine.dir
 
 build src\CMakeFiles\DelfosEngine.dir\main.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\main.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -86,6 +87,7 @@ build src\CMakeFiles\DelfosEngine.dir\main.cpp.obj: CXX_COMPILER__DelfosEngine_D
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Core\Core.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Core\Core.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -94,6 +96,7 @@ build src\CMakeFiles\DelfosEngine.dir\private\Core\Core.cpp.obj: CXX_COMPILER__D
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector3.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Math\Vector\Vector3.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -102,6 +105,7 @@ build src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector3.cpp.obj: CXX_C
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Math\Transform\Transform.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Math\Transform\Transform.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -110,6 +114,7 @@ build src\CMakeFiles\DelfosEngine.dir\private\Math\Transform\Transform.cpp.obj: 
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Engine\GameObject\GameObject.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\GameObject\GameObject.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -118,6 +123,7 @@ build src\CMakeFiles\DelfosEngine.dir\private\Engine\GameObject\GameObject.cpp.o
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Engine\Project\ProjectManager.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Project\ProjectManager.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -126,6 +132,7 @@ build src\CMakeFiles\DelfosEngine.dir\private\Engine\Project\ProjectManager.cpp.
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector2.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Math\Vector\Vector2.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -134,6 +141,7 @@ build src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector2.cpp.obj: CXX_C
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Scene.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Scene\Scene.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
@@ -142,10 +150,47 @@ build src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Scene.cpp.obj: CXX_CO
   TARGET_PDB = src\DelfosEngine.pdb
 
 build src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\SceneManager.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Scene\SceneManager.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
   OBJECT_FILE_DIR = src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
+  TARGET_PDB = src\DelfosEngine.pdb
+
+build src\CMakeFiles\DelfosEngine.dir\private\IO\FileManager.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\IO\FileManager.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosEngine.dir\private\IO
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
+  TARGET_PDB = src\DelfosEngine.pdb
+
+build src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Camera.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Scene\Camera.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
+  TARGET_PDB = src\DelfosEngine.pdb
+
+build src\CMakeFiles\DelfosEngine.dir\private\Module\Input\Input.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Module\Input\Input.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosEngine.dir\private\Module\Input
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
+  TARGET_PDB = src\DelfosEngine.pdb
+
+build src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader\Shader.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Shader\Shader.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader
   TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
   TARGET_PDB = src\DelfosEngine.pdb
 
@@ -157,10 +202,10 @@ build src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\SceneManager.cpp.obj:
 #############################################
 # Link the executable src\DelfosEngine.exe
 
-build src\DelfosEngine.exe: CXX_EXECUTABLE_LINKER__DelfosEngine_Debug src\CMakeFiles\DelfosEngine.dir\main.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Core\Core.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector3.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Transform\Transform.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\GameObject\GameObject.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Project\ProjectManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector2.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Scene.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\SceneManager.cpp.obj | ..\..\..\src\..\lib\GL\OpenGL32.lib ..\..\..\src\..\lib\GL\GlU32.lib ..\..\..\src\..\lib\GL\glew32.lib ..\..\..\src\..\lib\SDL\SDL2.lib ..\..\..\src\..\lib\SDL\SDL2main.lib
+build src\DelfosEngine.exe: CXX_EXECUTABLE_LINKER__DelfosEngine_Debug src\CMakeFiles\DelfosEngine.dir\main.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Core\Core.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector3.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Transform\Transform.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\GameObject\GameObject.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Project\ProjectManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector2.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Scene.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\SceneManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\IO\FileManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Camera.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Module\Input\Input.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader\Shader.cpp.obj | ..\..\..\src\..\lib\GL\OpenGL32.lib ..\..\..\src\..\lib\GL\GlU32.lib ..\..\..\src\..\lib\GL\glew32.lib ..\..\..\src\..\lib\SDL\SDL2.lib ..\..\..\src\..\lib\SDL\SDL2main.lib ..\..\..\src\..\lib\SDL\SDL2_image.lib ..\..\..\src\..\lib\ASSIMP\assimp.lib ..\..\..\src\..\lib\LibPNG\libpng16.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:windows
-  LINK_LIBRARIES = ..\..\..\src\..\lib\GL\OpenGL32.lib  ..\..\..\src\..\lib\GL\GlU32.lib  ..\..\..\src\..\lib\GL\glew32.lib  ..\..\..\src\..\lib\SDL\SDL2.lib  ..\..\..\src\..\lib\SDL\SDL2main.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = ..\..\..\src\..\lib\GL\OpenGL32.lib  ..\..\..\src\..\lib\GL\GlU32.lib  ..\..\..\src\..\lib\GL\glew32.lib  ..\..\..\src\..\lib\SDL\SDL2.lib  ..\..\..\src\..\lib\SDL\SDL2main.lib  ..\..\..\src\..\lib\SDL\SDL2_image.lib  ..\..\..\src\..\lib\ASSIMP\assimp.lib  ..\..\..\src\..\lib\LibPNG\libpng16.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

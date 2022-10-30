@@ -1,4 +1,5 @@
 #include "Engine/Scene/Scene.h"
+#include <GL/glm/glm.hpp>
 
 class SceneManager {
 private:
