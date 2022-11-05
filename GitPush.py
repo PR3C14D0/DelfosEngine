@@ -10,7 +10,8 @@ def main():
     for branch in branches:
         os.system(f"git checkout {branch}")
         if branch == "master":
-            os.system("git add . --force")
+            os.system("git add .")
+            os.system("git add lib --force")
         else:
             os.system("git cherry-pick master")
         
