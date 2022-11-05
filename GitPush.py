@@ -11,7 +11,7 @@ def main():
     args = parser.parse_args()
 
     for branch in branches:
-        #repo.git.checkout(branch)
+        repo.git.checkout(branch)
         diff = repo.git.diff(repo.head.commit.tree)
         if diff == "":
             print(f"Your branch has no changes: {branch}")
