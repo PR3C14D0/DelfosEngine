@@ -19,7 +19,7 @@ def main():
                 print("Exitting...")
                 return
         
-        repo.git.add("--all")
+        repo.git.add(A=True)
         repo.git.commit(f"-m {args.message}")
         repo.remotes.origin.push(refspec = f"{branch}:{branch}")
         print(f"Changes pushed to: origin:{branch}")
