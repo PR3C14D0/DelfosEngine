@@ -1,9 +1,6 @@
-from git import Repo
-import argparse
+import argparse, os
 
 branches = ['master', '0.1.0']
-
-repo = Repo(".git")
 
 def main():
     parser = argparse.ArgumentParser(prog = "GitPush", description = "Pushes git changes", epilog = "--message <Commit message>")
@@ -11,18 +8,17 @@ def main():
     args = parser.parse_args()
 
     for branch in branches:
-        repo.git.checkout(branch)
-        diff = repo.git.diff(repo.head.commit.tree)
-        if diff == "":
-            print(f"Your branch has no changes: {branch}")
-            if branch == branches[-1]:
-                print("Exitting...")
-                return
+        os.system(f"git checkout {branch}")
+        if branch == "master":
+            os.system("git add .")
+            os.system("git add lib --force")
+        else:
+            os.system("git cherry-pick master")
         
-        repo.git.add(A=True)
-        repo.git.commit(f"-m {args.message}")
-        repo.remotes.origin.push(refspec = f"{branch}:{branch}")
-        print(f"Changes pushed to: origin:{branch}")
+        os.system(f"git commit -m {args.message}")
+        os.system(f"git push origin {branch}")
+        if branch != "master":
+            os.system("git checkout master")
 
 if __name__ == "__main__":
-    main()
+    main(
