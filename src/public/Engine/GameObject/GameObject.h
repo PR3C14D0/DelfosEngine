@@ -45,8 +45,6 @@ public:
 	virtual void OnCreate();
 	virtual void Update();
 
-	GLuint LoadShader(const char* vert, const char* frag);
-
 	void PrepareRender();
 	void Draw(glm::mat4 mvp);
 

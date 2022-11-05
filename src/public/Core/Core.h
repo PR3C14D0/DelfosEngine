@@ -10,6 +10,9 @@
 #include <GL/GLU.h>
 #include "Engine/Scene/SceneManager.h"
 #include "Module/Input/Input.h"
+#include <ImGUI/imgui.h>
+#include <ImGUI/backends/imgui_impl_opengl3.h>
+#include <ImGUI/backends/imgui_impl_sdl.h>
 
 class Core {
 private:

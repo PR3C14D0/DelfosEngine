@@ -9,7 +9,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	EnableDebugger();
 #endif
 
-	string version = "v0.0.1";
+	string version = "v0.1";
 
 	cout << "DelfosEngine " << version << " (Debug mode)" << endl;
 

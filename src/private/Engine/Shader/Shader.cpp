@@ -17,8 +17,6 @@ void Shader::LoadShader(const char* vertFile, const char* fragFile) {
 	const char* vert = vertex.c_str();
 	const char* frag = fragment.c_str();
 
-	cout << vert << endl;
-
 	glShaderSource(VertexID, 1, &vert, NULL);
 	glCompileShader(VertexID);
 	glGetShaderiv(VertexID, GL_COMPILE_STATUS, &compiled);

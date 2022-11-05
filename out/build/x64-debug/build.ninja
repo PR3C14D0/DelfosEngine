@@ -75,7 +75,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 #############################################
 # Order-only phony target for DelfosEngine
 
-build cmake_object_order_depends_target_DelfosEngine: phony || src\CMakeFiles\DelfosEngine.dir
+build cmake_object_order_depends_target_DelfosEngine: phony || cmake_object_order_depends_target_ImGUI
 
 build src\CMakeFiles\DelfosEngine.dir\main.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\main.cpp || cmake_object_order_depends_target_DelfosEngine
   DEFINES = -DNOMINMAX
@@ -194,6 +194,15 @@ build src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader\Shader.cpp.obj: CXX_
   TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
   TARGET_PDB = src\DelfosEngine.pdb
 
+build src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\EditorCamera.cpp.obj: CXX_COMPILER__DelfosEngine_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Scene\EditorCamera.cpp || cmake_object_order_depends_target_DelfosEngine
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
+  TARGET_PDB = src\DelfosEngine.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DelfosEngine
@@ -202,10 +211,10 @@ build src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader\Shader.cpp.obj: CXX_
 #############################################
 # Link the executable src\DelfosEngine.exe
 
-build src\DelfosEngine.exe: CXX_EXECUTABLE_LINKER__DelfosEngine_Debug src\CMakeFiles\DelfosEngine.dir\main.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Core\Core.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector3.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Transform\Transform.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\GameObject\GameObject.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Project\ProjectManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector2.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Scene.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\SceneManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\IO\FileManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Camera.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Module\Input\Input.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader\Shader.cpp.obj | ..\..\..\src\..\lib\GL\OpenGL32.lib ..\..\..\src\..\lib\GL\GlU32.lib ..\..\..\src\..\lib\GL\glew32.lib ..\..\..\src\..\lib\SDL\SDL2.lib ..\..\..\src\..\lib\SDL\SDL2main.lib ..\..\..\src\..\lib\SDL\SDL2_image.lib ..\..\..\src\..\lib\ASSIMP\assimp.lib ..\..\..\src\..\lib\LibPNG\libpng16.lib
+build src\DelfosEngine.exe: CXX_EXECUTABLE_LINKER__DelfosEngine_Debug src\CMakeFiles\DelfosEngine.dir\main.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Core\Core.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector3.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Transform\Transform.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\GameObject\GameObject.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Project\ProjectManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Math\Vector\Vector2.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Scene.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\SceneManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\IO\FileManager.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\Camera.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Module\Input\Input.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Shader\Shader.cpp.obj src\CMakeFiles\DelfosEngine.dir\private\Engine\Scene\EditorCamera.cpp.obj | ..\..\..\src\..\lib\GL\OpenGL32.lib ..\..\..\src\..\lib\GL\GlU32.lib ..\..\..\src\..\lib\GL\glew32.lib ..\..\..\src\..\lib\SDL\SDL2.lib ..\..\..\src\..\lib\SDL\SDL2main.lib ..\..\..\src\..\lib\SDL\SDL2_image.lib ..\..\..\src\..\lib\ASSIMP\assimp.lib src\ImGUI.lib || src\ImGUI.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:windows
-  LINK_LIBRARIES = ..\..\..\src\..\lib\GL\OpenGL32.lib  ..\..\..\src\..\lib\GL\GlU32.lib  ..\..\..\src\..\lib\GL\glew32.lib  ..\..\..\src\..\lib\SDL\SDL2.lib  ..\..\..\src\..\lib\SDL\SDL2main.lib  ..\..\..\src\..\lib\SDL\SDL2_image.lib  ..\..\..\src\..\lib\ASSIMP\assimp.lib  ..\..\..\src\..\lib\LibPNG\libpng16.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = ..\..\..\src\..\lib\GL\OpenGL32.lib  ..\..\..\src\..\lib\GL\GlU32.lib  ..\..\..\src\..\lib\GL\glew32.lib  ..\..\..\src\..\lib\SDL\SDL2.lib  ..\..\..\src\..\lib\SDL\SDL2main.lib  ..\..\..\src\..\lib\SDL\SDL2_image.lib  ..\..\..\src\..\lib\ASSIMP\assimp.lib  src\ImGUI.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -213,6 +222,87 @@ build src\DelfosEngine.exe: CXX_EXECUTABLE_LINKER__DelfosEngine_Debug src\CMakeF
   TARGET_FILE = src\DelfosEngine.exe
   TARGET_IMPLIB = src\DelfosEngine.lib
   TARGET_PDB = src\DelfosEngine.pdb
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target ImGUI
+
+
+#############################################
+# Order-only phony target for ImGUI
+
+build cmake_object_order_depends_target_ImGUI: phony || src\CMakeFiles\ImGUI.dir
+
+build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_opengl3.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\include\ImGUI\backends\imgui_impl_opengl3.cpp || cmake_object_order_depends_target_ImGUI
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_PDB = src\ImGUI.pdb
+
+build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_sdl.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\include\ImGUI\backends\imgui_impl_sdl.cpp || cmake_object_order_depends_target_ImGUI
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_PDB = src\ImGUI.pdb
+
+build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\include\ImGUI\imgui.cpp || cmake_object_order_depends_target_ImGUI
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\__\include\ImGUI
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_PDB = src\ImGUI.pdb
+
+build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_draw.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\include\ImGUI\imgui_draw.cpp || cmake_object_order_depends_target_ImGUI
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\__\include\ImGUI
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_PDB = src\ImGUI.pdb
+
+build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_tables.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\include\ImGUI\imgui_tables.cpp || cmake_object_order_depends_target_ImGUI
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\__\include\ImGUI
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_PDB = src\ImGUI.pdb
+
+build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_widgets.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\include\ImGUI\imgui_widgets.cpp || cmake_object_order_depends_target_ImGUI
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\__\include\ImGUI
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_PDB = src\ImGUI.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target ImGUI
+
+
+#############################################
+# Link the static library src\ImGUI.lib
+
+build src\ImGUI.lib: CXX_STATIC_LIBRARY_LINKER__ImGUI_Debug src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_opengl3.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_sdl.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_draw.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_tables.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_widgets.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
+  TARGET_FILE = src\ImGUI.lib
+  TARGET_PDB = src\ImGUI.pdb
 
 
 #############################################
@@ -244,6 +334,10 @@ build DelfosEngine: phony src\DelfosEngine.exe
 
 build DelfosEngine.exe: phony src\DelfosEngine.exe
 
+build ImGUI: phony src\ImGUI.lib
+
+build ImGUI.lib: phony src\ImGUI.lib
+
 # =============================================================================
 # Folder targets.
 
@@ -259,7 +353,7 @@ build all: phony src\all
 #############################################
 # Folder: C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src
 
-build src\all: phony src\DelfosEngine.exe
+build src\all: phony src\DelfosEngine.exe src\ImGUI.lib
 
 # =============================================================================
 # Built-in targets

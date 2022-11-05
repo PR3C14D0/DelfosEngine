@@ -12,6 +12,11 @@
 #include <GL/glm/ext/matrix_transform.hpp>
 #include "Module/Input/Input.h"
 #include "Engine/Scene/Camera.h"
+#include "Engine/Scene/EditorCamera.h"
+#include <GL/glm/gtx/string_cast.hpp>
+#include <ImGUI/imgui.h>
+#include <ImGUI/backends/imgui_impl_opengl3.h>
+#include <ImGUI/backends/imgui_impl_sdl.h>
 
 using namespace std;
 
@@ -24,7 +29,8 @@ protected:
 	glm::mat4 view;
 	glm::mat4 proj;
 	glm::mat4 model;
-	Camera* EditorCamera;
+	EditorCamera* editorCamera;
+	Camera* ActualCamera;
 public:
 	Scene() {};
 	Scene(string name);
