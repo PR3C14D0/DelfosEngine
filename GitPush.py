@@ -21,4 +21,4 @@ def main():
             os.system("git checkout master")
 
 if __name__ == "__main__":
-    main()
+    main(
