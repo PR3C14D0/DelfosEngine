@@ -2,7 +2,8 @@
 
 Scene::Scene(string name) {
 	this->name = name;
-	EditorCamera = new Camera("Editor Camera");
+	this->editorCamera = new EditorCamera("Editor Camera");
+	this->ActualCamera = this->editorCamera;
 }
 
 void Scene::AddObject(GameObject* pGo) {
@@ -13,7 +14,7 @@ void Scene::AddObject(GameObject* pGo) {
 
 void Scene::Update(float deltaTime) {;
 	this->totalTime += (deltaTime);
-	this->EditorCamera->Update(deltaTime);
+	this->ActualCamera->Update(deltaTime);
 }
 
 void Scene::Render(SDL_Window* window, int width, int height) {
@@ -25,26 +26,27 @@ void Scene::Render(SDL_Window* window, int width, int height) {
 	glEnable(GL_COLOR);
 	glEnable(GL_DEBUG_OUTPUT);
 
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	this->proj = glm::perspective(glm::radians(90.f), ((float)width / (float)height), .1f, 300.f);
-
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	this->view = glm::lookAt(
-		glm::vec3(0.f, 0.f, -1.f),
-		glm::vec3(0.f, 0.f, 0.f),
-		glm::vec3(0.0f, 1.0f, 0.0f));
-
 	this->model = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+	this->ActualCamera->UpdateSize(width, height);
 
-	glm::mat4 mvp = proj * view * model;
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplSDL2_NewFrame(window);
+	ImGui::NewFrame();
+	ImGui::Begin("Test");
+	ImGui::Button("Button");
+	ImGui::End();
+
+	glm::mat4 mvp = this->ActualCamera->Perspective * this->ActualCamera->View * model;
 
 	for (GameObject* g : go) {
 		g->PrepareRender();
 		g->Draw(mvp);
 	}
 
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	SDL_GL_SwapWindow(window);
 }

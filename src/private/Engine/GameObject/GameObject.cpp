@@ -8,70 +8,6 @@ void GameObject::Update() {
 	this->transform->rotate(1.f, 1.f, 0.f);
 }
 
-GLuint GameObject::LoadShader(const char* vertFile, const char* fragFile) {
-	GLuint VertexID = glCreateShader(GL_VERTEX_SHADER);
-	GLuint FragmentID = glCreateShader(GL_FRAGMENT_SHADER);
-	GLint compiled;
-
-	FileManager f = *this->fileMgr;
-	string vertex = f.LoadFile(vertFile);
-	string fragment = f.LoadFile(fragFile);
-
-	const char* vert = vertex.c_str();
-	const char* frag = vertex.c_str();
-
-
-	glShaderSource(VertexID, 1, &vert, NULL);
-	glCompileShader(VertexID);
-	glGetShaderiv(VertexID, GL_COMPILE_STATUS, &compiled);
-
-	if (!compiled) {
-		GLint maxLength = 0;
-		glGetShaderiv(VertexID, GL_INFO_LOG_LENGTH, &maxLength);
-
-		vector<GLchar> errorLog(maxLength);
-		glGetShaderInfoLog(VertexID, maxLength, &maxLength, &errorLog[0]);
-
-		string message;
-		for (GLchar c : errorLog) {
-			message += c;
-		}
-		cout << "[ERROR]" << message << endl;
-	}
-
-	glShaderSource(FragmentID, 1, &frag, NULL);
-	glCompileShader(FragmentID);
-
-	glGetShaderiv(FragmentID, GL_COMPILE_STATUS, &compiled);
-
-	if (!compiled) {
-		GLint maxLength = 0;
-		glGetShaderiv(FragmentID, GL_INFO_LOG_LENGTH, &maxLength);
-
-		vector<GLchar> errorLog(maxLength);
-		glGetShaderInfoLog(FragmentID, maxLength, &maxLength, &errorLog[0]);
-
-		string message;
-		for (GLchar c : errorLog) {
-			message += c;
-		}
-		cout << "[ERROR] " << message << endl;
-	}
-
-	this->program = glCreateProgram();
-
-	glAttachShader(this->program, VertexID);
-	glAttachShader(this->program, FragmentID);
-	glLinkProgram(this->program);
-
-	glUseProgram(this->program);
-
-	glDeleteShader(VertexID);
-	glDeleteShader(FragmentID);
-
-	return program;
-}
-
 void GameObject::PrepareRender() {
 	if (!bufferUploaded) {
 		/* Vertex */
@@ -167,8 +103,10 @@ void GameObject::Draw(glm::mat4 mvp) {
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_NONE, 0, (void*)0);
 
 	glDrawArrays(GL_TRIANGLES, 0, (vertex.size() / 3));
+
 	glDisableVertexAttribArray(1);
 	glDisableVertexAttribArray(0);
+
 }
 
 

@@ -2,6 +2,15 @@
 
 Input* Input::input;
 
+Input::Input() {
+	this->cursorMoved = false;
+	this->delta = glm::vec2(0.f, 0.f);
+	this->w = 0;
+	this->h = 0;
+	this->relX = 0.f;
+	this->relY = 0.f;
+}
+
 InputKeyValue::InputKeyValue(KeyboardInput key, char value) {
 	this->key = key;
 	this->value = value;
@@ -105,4 +114,44 @@ Input* Input::GetInstance() {
 	if (!input)
 		input = new Input;
 	return input;
+}
+
+float Input::GetAxis(string axis) {
+	if (axis == "Up") {
+		return this->relY;
+	} else if (axis == "Right") {
+		return this->relX;
+	}
+	else {
+		cout << "[ERROR] Invalid axis provided: " << axis << endl;
+		return 0.f;
+	}
+}
+
+void Input::UpdateAxis(float x, float y, float relx, float rely) {
+	this->relX = relx;
+	this->relY = rely;
+}
+
+void Input::SetScreenSize(int width, int height) {
+	this->w = width;
+	this->h = height;
+}
+
+void Input::BeginFrame() {
+	this->relX = 0.f;
+	this->relY = 0.f;
+}
+
+void Input::HideCursor(bool b) {
+	if (b) {
+		if(!SDL_GetRelativeMouseMode())
+			SDL_SetRelativeMouseMode((SDL_bool)b);
+		return;
+	}
+	else {
+		if(SDL_GetRelativeMouseMode())
+			SDL_SetRelativeMouseMode((SDL_bool)b);
+		return;
+	}
 }
