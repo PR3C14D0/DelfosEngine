@@ -18,27 +18,29 @@ void EditorCamera::Update(float deltaTime) {
 		this->transform->rotate(deltaTime * -angleX * 50.f, 0.f, 0.f);
 		this->transform->rotate(0.f, deltaTime * -angleY * 50.f, 0.f);
 
-		if (this->transform->Rotation.x > 89.f) {
-			this->transform->Rotation.x = 89.f;
+		if (this->transform->Rotation.x > (89.f*(PI/180))) {
+			this->transform->Rotation.x = (89.f * (PI / 180));
 			return;
 		}
-		if (this->transform->Rotation.x < -89.f) {
-			this->transform->Rotation.x = -89.f;
+		if (this->transform->Rotation.x < (-89.f * (PI / 180))) {
+			this->transform->Rotation.x = (-89.f * (PI / 180));
 			return;
 		}
 
-		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'w')) {
-			this->transform->translate(0.f, 0.f, /*deltaTime **/ -speed * this->transform->Forward());
-		}
-		if (input->GetKey(KeyboardInput::KEY_PRESSED, 's')) {
-			this->transform->translate(0.f, 0.f, deltaTime * speed);
-		}
-		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'd')) {
-			this->transform->translate(deltaTime * speed, 0.f, 0.f);
-		}
-		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'a')) {
-			this->transform->translate(deltaTime * -speed, 0.f, 0.f);
-		}
+		cout << transform->Rotation.x << endl;
+
+		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'w')) 
+			this->transform->translate(this->transform->Forward() * (-speed * deltaTime));
+		
+		if (input->GetKey(KeyboardInput::KEY_PRESSED, 's')) 
+			this->transform->translate(this->transform->Forward() * (speed * deltaTime));
+		
+		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'd')) 
+			this->transform->translate(this->transform->Right() * (speed * deltaTime));
+		
+		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'a')) 
+			this->transform->translate(this->transform->Right() * (-speed * deltaTime));
+		
 	}
 	else {
 		this->input->HideCursor(false);

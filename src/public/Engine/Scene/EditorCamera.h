@@ -1,5 +1,7 @@
 #include "Engine/Scene/Camera.h"
 
+#define PI 3.14159265359
+
 class EditorCamera : public Camera {
 public:
 	// EditorCamera() = default;

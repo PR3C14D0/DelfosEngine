@@ -9,6 +9,8 @@ public:
 	float z;
 	Vector3() {};
 	Vector3(float x, float y, float z);
+	Vector3 operator * (float a);
+	Vector3 operator + (const Vector3& vec2);
 
 	glm::vec3 toGLMVec3();
 };

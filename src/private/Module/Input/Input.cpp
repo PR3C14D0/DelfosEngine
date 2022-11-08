@@ -44,6 +44,8 @@ bool Input::GetKey(KeyboardInput type, char key) {
 	return found;
 }
 
+/* TODO: Solve PTR error */
+
 void Input::SetKeyState(KeyboardInput key, char value) {
 	if (this->keys.size() == 0) {
 		InputKeyValue* pI = new InputKeyValue(key, value);

@@ -7,7 +7,7 @@ Core::Core() {
 	SDL_GetDesktopDisplayMode(0, &dm);
 	this->width = dm.w - 100;
 	this->height = dm.h -100;
-	this->window = SDL_CreateWindow("Delfos engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, this->width, this->height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+	this->window = SDL_CreateWindow("Delfos engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, this->width, this->height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 	this->context = SDL_GL_CreateContext(this->window);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);

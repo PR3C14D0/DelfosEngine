@@ -15,8 +15,8 @@ void Camera::UpdateSize(int w, int h) {
 void Camera::Update(float deltaTime) {
 	glm::mat4 cameraView = glm::mat4(1.f);
 	cameraView = glm::translate(cameraView, this->transform->Location.toGLMVec3());
-	cameraView = glm::rotate(cameraView, this->transform->Rotation.x, glm::vec3(1, 0, 0));
 	cameraView = glm::rotate(cameraView, this->transform->Rotation.y, glm::vec3(0, 1, 0));
+	cameraView = glm::rotate(cameraView, this->transform->Rotation.x, glm::vec3(1, 0, 0));
 	cameraView = glm::rotate(cameraView, this->transform->Rotation.z, glm::vec3(0, 0, 1));
 	cameraView = glm::affineInverse(cameraView);
 
