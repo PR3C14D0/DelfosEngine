@@ -1,6 +1,6 @@
 #include "Engine/Scene/Camera.h"
 
-#define PI 3.14159265359
+#define PI 3.14159265359f
 
 class EditorCamera : public Camera {
 public:

@@ -15,19 +15,21 @@ void EditorCamera::Update(float deltaTime) {
 		float angleX = relY / this->h;
 		float angleY = relX / this->w;
 
-		this->transform->rotate(deltaTime * -angleX * 50.f, 0.f, 0.f);
-		this->transform->rotate(0.f, deltaTime * -angleY * 50.f, 0.f);
+		//this->transform->rotate(deltaTime * -angleX * 50.f, 0.f, 0.f);
+		//this->transform->rotate(0.f, deltaTime * -angleY * 50.f, 0.f);
 
-		if (this->transform->Rotation.x > (89.f*(PI/180))) {
-			this->transform->Rotation.x = (89.f * (PI / 180));
+		this->transform->rotate(Quaternion{ 0.f, -angleY * 0.1f, 0.f });
+		this->transform->rotate(Quaternion{ -angleX * 0.1f, 0.f, 0.f });
+
+		/*if (this->transform->Rotation.toGLMQua().x > (89.f * (PI / 180))) {
+			glm::vec3 v = glm::eulerAngles(this->transform->Rotation.toGLMQua()) * (PI / 180.f);
+			this->transform->Rotation.toGLMQua().x = v.x;
 			return;
 		}
-		if (this->transform->Rotation.x < (-89.f * (PI / 180))) {
-			this->transform->Rotation.x = (-89.f * (PI / 180));
+		if (this->transform->Rotation.toGLMQua().x < (-89.f * (PI / 180))) {
+			this->transform->Rotation.toGLMQua().x = (-89.f * (PI / 180));
 			return;
-		}
-
-		cout << transform->Rotation.x << endl;
+		}*/
 
 		if (input->GetKey(KeyboardInput::KEY_PRESSED, 'w')) 
 			this->transform->translate(this->transform->Forward() * (-speed * deltaTime));
