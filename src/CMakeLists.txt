@@ -4,7 +4,7 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Agregue un origen al ejecutable de este proyecto.
-add_executable (DelfosEngine main.cpp "public/Core/Core.h" "private/Core/Core.cpp" "private/Math/Vector/Vector3.cpp" "private/Math/Vector/Vector3.cpp" "public/Engine/GameObject/GameObject.h" "public/Math/Transform/Transform.h"   "private/Math/Transform/Transform.cpp" "private/Engine/GameObject/GameObject.cpp"   "public/Engine/Project/ProjectManager.h" "private/Engine/Project/ProjectManager.cpp" "public/Math/Vector/Vector2.h" "private/Math/Vector/Vector2.cpp" "public/Engine/Scene/Scene.h" "private/Engine/Scene/Scene.cpp" "public/Engine/Scene/SceneManager.h" "private/Engine/Scene/SceneManager.cpp"      "public/IO/FileManager.h" "private/IO/FileManager.cpp" "public/Engine/Scene/Camera.h" "private/Engine/Scene/Camera.cpp" "public/Module/Input/Input.h" "private/Module/Input/Input.cpp" "private/Engine/Shader/Shader.cpp" "public/Engine/Shader/Shader.h" "public/Engine/Scene/EditorCamera.h" "private/Engine/Scene/EditorCamera.cpp")
+add_executable (DelfosEngine main.cpp "public/Core/Core.h" "private/Core/Core.cpp" "private/Math/Vector/Vector3.cpp" "private/Math/Vector/Vector3.cpp" "public/Engine/GameObject/GameObject.h" "public/Math/Transform/Transform.h"   "private/Math/Transform/Transform.cpp" "private/Engine/GameObject/GameObject.cpp"   "public/Engine/Project/ProjectManager.h" "private/Engine/Project/ProjectManager.cpp" "public/Math/Vector/Vector2.h" "private/Math/Vector/Vector2.cpp" "public/Engine/Scene/Scene.h" "private/Engine/Scene/Scene.cpp" "public/Engine/Scene/SceneManager.h" "private/Engine/Scene/SceneManager.cpp"      "public/IO/FileManager.h" "private/IO/FileManager.cpp" "public/Engine/Scene/Camera.h" "private/Engine/Scene/Camera.cpp" "public/Module/Input/Input.h" "private/Module/Input/Input.cpp" "private/Engine/Shader/Shader.cpp" "public/Engine/Shader/Shader.h" "public/Engine/Scene/EditorCamera.h" "private/Engine/Scene/EditorCamera.cpp" "public/Math/Quaternion/Quaternion.h" "private/Math/Quaternion/Quaternion.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET DelfosEngine PROPERTY CXX_STANDARD 20)
@@ -12,6 +12,7 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 add_compile_definitions(NOMINMAX)
+add_definitions(-Zm2000)
 
 # TODO: Agregue pruebas y destinos de instalación si es necesario.
 set(GLOBAL_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../include")
