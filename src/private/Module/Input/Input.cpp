@@ -3,17 +3,10 @@
 Input* Input::input;
 
 Input::Input() {
-	this->cursorMoved = false;
-	this->delta = glm::vec2(0.f, 0.f);
-	this->w = 0;
-	this->h = 0;
 	this->relX = 0.f;
 	this->relY = 0.f;
-}
-
-InputKeyValue::InputKeyValue(KeyboardInput key, char value) {
-	this->key = key;
-	this->value = value;
+	this->w = 0;
+	this->h = 0;
 }
 
 bool Input::GetButton(MouseInput type) {
@@ -30,45 +23,22 @@ bool Input::GetButton(MouseInput type) {
 
 bool Input::GetKey(KeyboardInput type, char key) {
 	bool found = false;
-	for (InputKeyValue* pI : this->keys) {
-		InputKeyValue i = *pI;
-		if (i.value == key) {
-			if (i.key == type) {
-				found = true;
-				break;
-			}
+
+	this->keys = SDL_GetKeyboardState(NULL);
+
+	if (type == KEY_PRESSED) {
+		if (keys[SDL_GetScancodeFromKey(key)]) {
+			found = true;
 		}
-		else
-			break;
 	}
+
+	if (type == KEY_RELEASED) {
+		if (!keys[SDL_GetScancodeFromKey(key)]) {
+			found = true;
+		}
+	}
+
 	return found;
-}
-
-/* TODO: Solve PTR error */
-
-void Input::SetKeyState(KeyboardInput key, char value) {
-	if (this->keys.size() == 0) {
-		InputKeyValue* pI = new InputKeyValue(key, value);
-		this->keys.push_back(pI);
-		return;
-	}
-
-	for (InputKeyValue* pI : this->keys) {
-		InputKeyValue i = *pI;
-		if (i.value == value) {
-			if (i.key != key) {
-				pI->key = key;
-				return;
-			}
-			else
-				return;
-			break;
-		}
-		else {
-			InputKeyValue* pI = new InputKeyValue(key, value);
-			this->keys.push_back(pI);
-		}
-	}
 }
 
 void Input::SetButtonState(MouseInput input) {
@@ -91,24 +61,6 @@ void Input::SetButtonState(MouseInput input) {
 	}
 
 	this->buttons.push_back(input);
-	return;
-}
-
-void Input::RemoveReleased() {
-	for (int i = 0; i < this->buttons.size(); i++) {
-		if (this->buttons[i] == LCLICK_UP || this->buttons[i] == RCLICK_UP) {
-			this->buttons.erase(this->buttons.begin() + i);
-		}
-	}
-	
-	for (int i = 0; i < this->keys.size(); i++) {
-		InputKeyValue* pI = this->keys[i];
-		InputKeyValue in = *pI;
-		if (in.key == KeyboardInput::KEY_RELEASED) {
-			this->keys.erase(this->keys.begin() + i);
-		}
-	}
-
 	return;
 }
 
@@ -143,6 +95,12 @@ void Input::SetScreenSize(int width, int height) {
 void Input::BeginFrame() {
 	this->relX = 0.f;
 	this->relY = 0.f;
+
+	for (int i = 0; i < this->buttons.size(); i++) {
+		if (this->buttons[i] == LCLICK_UP || this->buttons[i] == RCLICK_UP) {
+			this->buttons.erase(this->buttons.begin() + i);
+		}
+	}
 }
 
 void Input::HideCursor(bool b) {

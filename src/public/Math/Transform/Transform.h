@@ -9,7 +9,7 @@ private:
 	glm::vec3 direction;
 public:
 	Vector3 Location;
-	Quaternion Rotation;
+	Vector3 Rotation;
 	Vector3 Forward();
 	Vector3 Right();
 	Vector3 Up();
@@ -20,6 +20,7 @@ public:
 	Transform(Vector3 Location, Vector3 Rotation, Vector3 Scale);
 	void translate(float x, float y, float z);
 	void translate(Vector3 vec);
-	void rotate(Quaternion rot);
+	void rotate(float x, float y, float z);
+	void rotate(Vector3 rot);
 	void rescale(Vector3 Scale);
 };

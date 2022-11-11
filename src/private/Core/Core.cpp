@@ -38,6 +38,7 @@ void Core::MainLoop() {
 	float currentTimeMs, deltaTimeMs, lastTimeMs = 0.f;
 	while (!quit) {
 		this->input->BeginFrame();
+
 		currentTimeMs = SDL_GetTicks();
 		deltaTimeMs = currentTimeMs - lastTimeMs;
 		while (SDL_PollEvent(&event)) {
@@ -61,12 +62,6 @@ void Core::MainLoop() {
 			case SDL_MOUSEMOTION:
 				input->UpdateAxis(event.motion.x, event.motion.y, event.motion.xrel, event.motion.yrel);
 				break;
-			case SDL_KEYDOWN:
-				input->SetKeyState(KeyboardInput::KEY_PRESSED, (char)SDL_GetKeyFromScancode(event.key.keysym.scancode));
-				break;
-			case SDL_KEYUP:
-				input->SetKeyState(KeyboardInput::KEY_RELEASED, (char)SDL_GetKeyFromScancode(event.key.keysym.scancode));
-				break;
 			case SDL_QUIT:
 				if (MessageBoxA(NULL, "Are you sure you want to close Delfos?", "Sure?", MB_OKCANCEL) == IDOK)
 					quit = true;
@@ -80,7 +75,6 @@ void Core::MainLoop() {
 		input->SetScreenSize(this->width, this->height);
 
 		this->sceneMgr.Render(deltaTimeMs / 1000.f);
-		input->RemoveReleased();
 		lastTimeMs = currentTimeMs;
 	}
 	SDL_Quit();

@@ -19,30 +19,14 @@ enum KeyboardInput {
 	KEY_RELEASED
 };
 
-struct InputKeyValue {
-	friend class Input;
-private:
-	KeyboardInput key;
-	char value;
-public:
-	InputKeyValue(KeyboardInput key, char value);
-};
-
 class Input {
 	friend class Core;
 private:
 	vector<MouseInput> buttons;
-	vector<InputKeyValue*> keys;
-	glm::vec2 delta = glm::vec2(0.f);
-	glm::vec2 oldPosition;
+	const Uint8* keys;
 
-	void SetKeyState(KeyboardInput key, char value);
 	void SetButtonState(MouseInput input);
 	Input();
-	bool cursorMoved;
-	float pitch = 0.f;
-
-	void RemoveReleased();
 	static Input* input;
 
 	int w, h;

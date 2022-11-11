@@ -16,6 +16,20 @@ Vector3 Vector3::operator * (float a) {
 	return v;
 }
 
+Vector3 Vector3::operator = (const Vector3& vec) {
+	this->x = vec.x;
+	this->y = vec.y;
+	this->z = vec.z;
+	return Vector3{ this->x, this->y, this->z };
+}
+
+Vector3 Vector3::operator += (const Vector3& vec) {
+	this->x = this->x + vec.x;
+	this->y = this->y + vec.y;
+	this->z = this->z + vec.z;
+	return Vector3{ this->x, this->y, this->z };
+}
+
 Vector3 Vector3::operator + (const Vector3& vec2) {
 	Vector3 v = Vector3{ this->x + vec2.x, this->y + vec2.y, this->z + vec2.z };
 	return v;
