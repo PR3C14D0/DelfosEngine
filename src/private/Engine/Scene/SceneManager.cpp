@@ -5,7 +5,7 @@ SceneManager::SceneManager(SDL_Window* window, int& width, int& height) {
 	this->height = height;
 	this->window = window;
 
-	this->defScene = Scene("DefaultScene");
+	this->defScene = Scene(window, "DefaultScene");
 
 	GameObject* asd = new GameObject("asd");
 
@@ -21,7 +21,7 @@ SceneManager::SceneManager(SDL_Window* window, int& width, int& height) {
 
 void SceneManager::Render(float deltaTime) {
 	this->actualScene.Update(deltaTime);
-	this->actualScene.Render(this->window, this->width, this->height);
+	this->actualScene.Render(this->width, this->height);
 }
 
 void SceneManager::ChangeScene(string name) {
