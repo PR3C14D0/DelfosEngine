@@ -22,14 +22,18 @@
 using namespace std;
 
 class GameObject {
+	friend class Scene;
 protected:
 	bool bufferUploaded;
 	GLuint VAO;
 	GLuint vertexBuff;
-	GLuint normalBuff;
-	GLuint uvBuff;
 	GLuint texBuff;
 	GLuint texCoordBuff;
+
+	Vector3 ambient;
+	Vector3 diffuse;
+	Vector3 specular;
+
 	const aiMesh* mesh;
 	const aiMaterial* mtl;
 	FileManager* fileMgr;
@@ -40,6 +44,8 @@ protected:
 	GLuint program;
 	
 	bool hasTex;
+
+	glm::mat4 modelMatrix;
 public:
 	GameObject() {};
 	virtual void OnCreate();
@@ -51,8 +57,6 @@ public:
 	void LoadModel(string path);
 
 	vector<GLfloat> vertex;
-	vector<GLfloat> normal;
-	vector<GLfloat> uv;
 	vector<GLfloat> textureCoords;
 
 	string name;

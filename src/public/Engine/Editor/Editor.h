@@ -6,6 +6,10 @@
 #include <map>
 #include <Windows.h>
 #include <SDL/SDL.h>
+#include <string>
+#include <format>
+#include <vector>
+#include "Engine/GameObject/GameObject.h"
 
 using namespace std;
 
@@ -21,8 +25,11 @@ private:
 	void EnableMenu(string name);
 	void DisableMenu(string name);
 	string projName;
+
+	GameObject* selectedGo;
+	vector<GameObject*> go;
 public:
 	Editor(SDL_Window* window, string projName);
 
-	void Update(float deltaTime);
+	void Update(float deltaTime, vector<GameObject*>& go);
 };

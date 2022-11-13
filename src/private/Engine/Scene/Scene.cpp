@@ -18,7 +18,9 @@ void Scene::AddObject(GameObject* pGo) {
 void Scene::Update(float deltaTime) {;
 	this->totalTime += (deltaTime);
 	this->ActualCamera->Update(deltaTime);
-	editor->Update(deltaTime);
+	editor->Update(deltaTime, this->go);
+	for (GameObject* g : go)
+		g->Update(deltaTime);
 }
 
 void Scene::Render(int width, int height) {
@@ -31,11 +33,11 @@ void Scene::Render(int width, int height) {
 	this->model = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
 	this->ActualCamera->UpdateSize(width, height);
 
-	glm::mat4 mvp = this->ActualCamera->Perspective * this->ActualCamera->View * model;
+	glm::mat4 cameraView = this->ActualCamera->Perspective * this->ActualCamera->View;
 
 	for (GameObject* g : go) {
 		g->PrepareRender();
-		g->Draw(mvp);
+		g->Draw(cameraView * g->modelMatrix);
 	}
 
 	ImGui::Render();
