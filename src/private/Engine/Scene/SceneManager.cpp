@@ -7,15 +7,10 @@ SceneManager::SceneManager(SDL_Window* window, int& width, int& height) {
 
 	this->defScene = Scene(window, "DefaultScene");
 
-	GameObject* asd = new GameObject("asd");
+	GameObject* asd = new GameObject("F16");
 
 	this->defScene.AddObject(asd);
 	asd->LoadModel("./f16.obj");
-	/*asd->vertex = {
-	0.f, 1.f, 0.0f,
-	1.f, -1.f, 0.0f,
-	-1.f,  -1.f, 0.0f
-	};*/
 	this->actualScene = defScene;
 }
 

@@ -5,7 +5,7 @@ void GameObject::OnCreate() {
 }
 
 void GameObject::Update(float deltaTime) {
-	
+	this->modelMatrix = glm::translate(this->modelMatrix, this->transform->Location.toGLMVec3());
 }
 
 void GameObject::PrepareRender() {
@@ -22,13 +22,6 @@ void GameObject::PrepareRender() {
 		
 		/* UV */
 
-		GLfloat* uvArr = uv.data();
-
-		glGenBuffers(1, &uvBuff);
-		glBindBuffer(GL_ARRAY_BUFFER, uvBuff);
-
-		glBufferData(GL_ARRAY_BUFFER, (uv.size() * sizeof(GLfloat)), uvArr, GL_STATIC_DRAW);
-
 		GLfloat* texCoordArr = textureCoords.data();
 
 		glGenBuffers(1, &texCoordBuff);
@@ -43,9 +36,8 @@ void GameObject::PrepareRender() {
 			glGenerateMipmap(GL_TEXTURE_2D);
 		}
 
-		this->bufferUploaded = true;
-		//this->LoadShader("Assets/Shaders/GameObject.vert", "Assets/Shaders/GameObject.frag");
 		this->shader->LoadShader("Assets/Shaders/GameObject.vert", "Assets/Shaders/GameObject.frag");
+		this->bufferUploaded = true;
 	}
 }
 
@@ -117,4 +109,5 @@ GameObject::GameObject(string name) {
 	this->fileMgr = new FileManager();
 	this->hasTex = false;
 	this->shader = new Shader;
+	this->modelMatrix = glm::mat4(1.f);
 }
