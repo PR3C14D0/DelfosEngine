@@ -2,4 +2,4 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Galery
-![]("img/Screenshot1.png")
+<img src="./img/Screenshot1.png"/>
