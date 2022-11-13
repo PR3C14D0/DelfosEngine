@@ -42,6 +42,7 @@ void Core::MainLoop() {
 		currentTimeMs = SDL_GetTicks();
 		deltaTimeMs = currentTimeMs - lastTimeMs;
 		while (SDL_PollEvent(&event)) {
+			ImGui_ImplSDL2_ProcessEvent(&event);
 			switch (event.type) {
 			case SDL_MOUSEBUTTONDOWN:
 				if (event.button.button == SDL_BUTTON_LEFT) {

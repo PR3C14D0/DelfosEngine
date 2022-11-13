@@ -43,7 +43,7 @@ protected:
 public:
 	GameObject() {};
 	virtual void OnCreate();
-	virtual void Update();
+	virtual void Update(float deltaTime);
 
 	void PrepareRender();
 	void Draw(glm::mat4 mvp);

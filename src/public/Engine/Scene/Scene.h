@@ -14,9 +14,7 @@
 #include "Engine/Scene/Camera.h"
 #include "Engine/Scene/EditorCamera.h"
 #include <GL/glm/gtx/string_cast.hpp>
-#include <ImGUI/imgui.h>
-#include <ImGUI/backends/imgui_impl_opengl3.h>
-#include <ImGUI/backends/imgui_impl_sdl.h>
+#include "Engine/Editor/Editor.h"
 
 using namespace std;
 
@@ -31,10 +29,13 @@ protected:
 	glm::mat4 model;
 	EditorCamera* editorCamera;
 	Camera* ActualCamera;
+	SDL_Window* window;
+
+	Editor* editor;
 public:
 	Scene() {};
-	Scene(string name);
+	Scene(SDL_Window* window, string name);
 	void AddObject(GameObject* pGo);
-	void Render(SDL_Window* window, int width, int height);
+	void Render(int width, int height);
 	void Update(float deltaTime);
 };

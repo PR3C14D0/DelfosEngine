@@ -4,8 +4,8 @@ void GameObject::OnCreate() {
 
 }
 
-void GameObject::Update() {
-	//this->transform->rotate(1.f, 1.f, 0.f);
+void GameObject::Update(float deltaTime) {
+	
 }
 
 void GameObject::PrepareRender() {
