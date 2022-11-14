@@ -234,12 +234,84 @@ build src\DelfosEngine.exe: CXX_EXECUTABLE_LINKER__DelfosEngine_Debug src\CMakeF
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:windows
   LINK_LIBRARIES = ..\..\..\src\..\lib\GL\OpenGL32.lib  ..\..\..\src\..\lib\GL\GlU32.lib  ..\..\..\src\..\lib\GL\glew32.lib  ..\..\..\src\..\lib\SDL\SDL2.lib  ..\..\..\src\..\lib\SDL\SDL2main.lib  ..\..\..\src\..\lib\SDL\SDL2_image.lib  ..\..\..\src\..\lib\ASSIMP\assimp.lib  src\ImGUI.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = src\CMakeFiles\DelfosEngine.dir
-  POST_BUILD = cd .
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/public/Engine/Shader/Shader.h C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/include/Delfos/public/Engine/Shader/Shader.h && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/public/Engine/GameObject/GameObject.h C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/include/Delfos/public/Engine/GameObject/GameObject.h && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/public/Math/Vector/Vector3.h C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/include/Delfos/public/Math/Vector/Vector3.h && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/public/Math/Transform/Transform.h C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/include/Delfos/public/Math/Transform/Transform.h && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/public/IO/FileManager.h C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/include/Delfos/public/IO/FileManager.h"
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = src\CMakeFiles\DelfosEngine.dir\
   TARGET_FILE = src\DelfosEngine.exe
   TARGET_IMPLIB = src\DelfosEngine.lib
   TARGET_PDB = src\DelfosEngine.pdb
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target DelfosLib
+
+
+#############################################
+# Order-only phony target for DelfosLib
+
+build cmake_object_order_depends_target_DelfosLib: phony || src\CMakeFiles\DelfosLib.dir
+
+build src\CMakeFiles\DelfosLib.dir\private\Engine\Shader\Shader.cpp.obj: CXX_COMPILER__DelfosLib_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Shader\Shader.cpp || cmake_object_order_depends_target_DelfosLib
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zm2000
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosLib.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosLib.dir\private\Engine\Shader
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosLib.dir\DelfosLib.pdb
+  TARGET_PDB = src\DelfosLib.pdb
+
+build src\CMakeFiles\DelfosLib.dir\private\Engine\GameObject\GameObject.cpp.obj: CXX_COMPILER__DelfosLib_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\GameObject\GameObject.cpp || cmake_object_order_depends_target_DelfosLib
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zm2000
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosLib.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosLib.dir\private\Engine\GameObject
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosLib.dir\DelfosLib.pdb
+  TARGET_PDB = src\DelfosLib.pdb
+
+build src\CMakeFiles\DelfosLib.dir\private\Math\Vector\Vector3.cpp.obj: CXX_COMPILER__DelfosLib_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Math\Vector\Vector3.cpp || cmake_object_order_depends_target_DelfosLib
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zm2000
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosLib.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosLib.dir\private\Math\Vector
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosLib.dir\DelfosLib.pdb
+  TARGET_PDB = src\DelfosLib.pdb
+
+build src\CMakeFiles\DelfosLib.dir\private\Math\Transform\Transform.cpp.obj: CXX_COMPILER__DelfosLib_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Math\Transform\Transform.cpp || cmake_object_order_depends_target_DelfosLib
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zm2000
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosLib.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosLib.dir\private\Math\Transform
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosLib.dir\DelfosLib.pdb
+  TARGET_PDB = src\DelfosLib.pdb
+
+build src\CMakeFiles\DelfosLib.dir\private\IO\FileManager.cpp.obj: CXX_COMPILER__DelfosLib_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\IO\FileManager.cpp || cmake_object_order_depends_target_DelfosLib
+  DEFINES = -DNOMINMAX
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zm2000
+  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
+  OBJECT_DIR = src\CMakeFiles\DelfosLib.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\DelfosLib.dir\private\IO
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosLib.dir\DelfosLib.pdb
+  TARGET_PDB = src\DelfosLib.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target DelfosLib
+
+
+#############################################
+# Link the static library src\DelfosLib.lib
+
+build src\DelfosLib.lib: CXX_STATIC_LIBRARY_LINKER__DelfosLib_Debug src\CMakeFiles\DelfosLib.dir\private\Engine\Shader\Shader.cpp.obj src\CMakeFiles\DelfosLib.dir\private\Engine\GameObject\GameObject.cpp.obj src\CMakeFiles\DelfosLib.dir\private\Math\Vector\Vector3.cpp.obj src\CMakeFiles\DelfosLib.dir\private\Math\Transform\Transform.cpp.obj src\CMakeFiles\DelfosLib.dir\private\IO\FileManager.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = src\CMakeFiles\DelfosLib.dir
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/private/Engine/Script/CMakeLists.txt C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/Script && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/private/Engine/Script/F16.h C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/Script && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/private/Engine/Script/F16.cpp C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/Script && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/src/private/Engine/Script/UserScripts.cpp C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/Script && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/DelfosLib.lib C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/Build/lib && cd /D C:\Users\aaron\Documents\DelfosEngine\out\build\x64-debug\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E remove C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src/DelfosLib.lib"
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = src\CMakeFiles\DelfosLib.dir\DelfosLib.pdb
+  TARGET_FILE = src\DelfosLib.lib
+  TARGET_PDB = src\DelfosLib.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target ImGUI
@@ -304,15 +376,6 @@ build src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_widgets.cpp.obj: CXX_COMPI
   TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
   TARGET_PDB = src\ImGUI.pdb
 
-build src\CMakeFiles\ImGUI.dir\private\Engine\Editor\Editor.cpp.obj: CXX_COMPILER__ImGUI_Debug C$:\Users\aaron\Documents\DelfosEngine\src\private\Engine\Editor\Editor.cpp || cmake_object_order_depends_target_ImGUI
-  DEFINES = -DNOMINMAX
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zm2000
-  INCLUDES = -IC:\Users\aaron\Documents\DelfosEngine\src\..\include -IC:\Users\aaron\Documents\DelfosEngine\src\public
-  OBJECT_DIR = src\CMakeFiles\ImGUI.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\ImGUI.dir\private\Engine\Editor
-  TARGET_COMPILE_PDB = src\CMakeFiles\ImGUI.dir\ImGUI.pdb
-  TARGET_PDB = src\ImGUI.pdb
-
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target ImGUI
@@ -321,7 +384,7 @@ build src\CMakeFiles\ImGUI.dir\private\Engine\Editor\Editor.cpp.obj: CXX_COMPILE
 #############################################
 # Link the static library src\ImGUI.lib
 
-build src\ImGUI.lib: CXX_STATIC_LIBRARY_LINKER__ImGUI_Debug src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_opengl3.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_sdl.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_draw.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_tables.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_widgets.cpp.obj src\CMakeFiles\ImGUI.dir\private\Engine\Editor\Editor.cpp.obj
+build src\ImGUI.lib: CXX_STATIC_LIBRARY_LINKER__ImGUI_Debug src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_opengl3.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\backends\imgui_impl_sdl.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_draw.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_tables.cpp.obj src\CMakeFiles\ImGUI.dir\__\include\ImGUI\imgui_widgets.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = src\CMakeFiles\ImGUI.dir
@@ -361,6 +424,10 @@ build DelfosEngine: phony src\DelfosEngine.exe
 
 build DelfosEngine.exe: phony src\DelfosEngine.exe
 
+build DelfosLib: phony src\DelfosLib.lib
+
+build DelfosLib.lib: phony src\DelfosLib.lib
+
 build ImGUI: phony src\ImGUI.lib
 
 build ImGUI.lib: phony src\ImGUI.lib
@@ -380,7 +447,7 @@ build all: phony src\all
 #############################################
 # Folder: C:/Users/aaron/Documents/DelfosEngine/out/build/x64-debug/src
 
-build src\all: phony src\DelfosEngine.exe src\ImGUI.lib
+build src\all: phony src\DelfosEngine.exe src\DelfosLib.lib src\ImGUI.lib
 
 # =============================================================================
 # Built-in targets

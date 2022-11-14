@@ -5,12 +5,15 @@ void GameObject::OnCreate() {
 }
 
 void GameObject::Update(float deltaTime) {
-	this->modelMatrix = glm::translate(this->modelMatrix, this->transform->Location.toGLMVec3());
+	glm::mat4 modelMatrix = glm::mat4(1.f);
+	modelMatrix = glm::translate(modelMatrix, this->transform->Location.toGLMVec3());
+	this->modelMatrix = modelMatrix;
 }
 
 void GameObject::PrepareRender() {
 	if (!bufferUploaded) {
 		/* Vertex */
+
 		GLfloat* vertexArr = vertex.data();
 		glGenVertexArrays(1, &VAO);
 		glBindVertexArray(VAO);
@@ -19,17 +22,15 @@ void GameObject::PrepareRender() {
 		glBindBuffer(GL_ARRAY_BUFFER, vertexBuff);
 	
 		glBufferData(GL_ARRAY_BUFFER, (vertex.size() * sizeof(GLfloat)), vertexArr, GL_STATIC_DRAW);
-		
-		/* UV */
-
-		GLfloat* texCoordArr = textureCoords.data();
-
-		glGenBuffers(1, &texCoordBuff);
-		glBindBuffer(GL_ARRAY_BUFFER, this->texCoordBuff);
-
-		glBufferData(GL_ARRAY_BUFFER, (textureCoords.size() * sizeof(GLfloat)), texCoordArr, GL_STATIC_DRAW);
 
 		if (this->hasTex) {
+			GLfloat* texCoordArr = textureCoords.data();
+
+			glGenBuffers(1, &texCoordBuff);
+			glBindBuffer(GL_ARRAY_BUFFER, this->texCoordBuff);
+
+			glBufferData(GL_ARRAY_BUFFER, (textureCoords.size() * sizeof(GLfloat)), texCoordArr, GL_STATIC_DRAW);
+
 			glGenTextures(1, &texBuff);
 			glBindTexture(GL_TEXTURE_2D, texBuff);
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, this->tex->w, this->tex->h, 0, GL_RGB, GL_UNSIGNED_BYTE, tex->pixels);
@@ -72,6 +73,9 @@ void GameObject::LoadModel(string path) {
 			textureCoords.push_back(mesh->mTextureCoords[0][i].y);
 		}
 	}
+
+	if (bufferUploaded)
+		ClearBuffers();
 }
 
 void GameObject::Draw(glm::mat4 mvp) {
@@ -110,4 +114,19 @@ GameObject::GameObject(string name) {
 	this->hasTex = false;
 	this->shader = new Shader;
 	this->modelMatrix = glm::mat4(1.f);
+}
+
+void GameObject::ClearVertexArrays() {
+	this->vertex.clear();
+	this->textureCoords.clear();
+}
+
+void GameObject::ClearBuffers() {
+	glDeleteBuffers(1, &this->vertexBuff);
+	glDeleteBuffers(1, &this->texCoordBuff);
+	glDeleteTextures(1, &this->texBuff);
+	glDeleteBuffers(1, &this->texBuff);
+	this->bufferUploaded = false;
+	this->hasTex = false;
+	return;
 }

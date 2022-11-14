@@ -1,6 +1,5 @@
 #pragma once
 #include "Math/Vector/Vector3.h"
-#include "Math/Quaternion/Quaternion.h"
 
 struct Transform {
 private:

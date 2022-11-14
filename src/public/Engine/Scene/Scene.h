@@ -16,6 +16,9 @@
 #include <GL/glm/gtx/string_cast.hpp>
 #include "Engine/Editor/Editor.h"
 
+#include <Windows.h>
+#include <libloaderapi.h>
+
 using namespace std;
 
 class Scene {
