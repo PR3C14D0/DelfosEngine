@@ -1,4 +1,5 @@
 #pragma once
+#define GL_GLEXT_PROTOTYPES
 #include "Math/Transform/Transform.h"
 #include <iostream>
 #include <vector>
@@ -23,6 +24,7 @@ using namespace std;
 
 class GameObject {
 	friend class Scene;
+	friend class Editor;
 protected:
 	bool bufferUploaded;
 	GLuint VAO;
@@ -62,4 +64,7 @@ public:
 	string name;
 	GameObject(string name);
 	Transform* transform;
+
+	void ClearBuffers();
+	void ClearVertexArrays();
 };

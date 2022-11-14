@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <ImGUI/imgui.h>
 #include <ImGUI/backends/imgui_impl_opengl3.h>
@@ -20,6 +22,8 @@ private:
 	void FileMenu();
 	void BuildMenu();
 
+	void CreateItemMenu();
+
 	map<string, bool> OpenMenus;
 
 	void EnableMenu(string name);
@@ -27,9 +31,13 @@ private:
 	string projName;
 
 	GameObject* selectedGo;
+	vector<GameObject*>* pGo;
 	vector<GameObject*> go;
+
+	char creatingItemName[16] = "Object name";
+	char creatingItemMeshPath[MAX_PATH] = "";
 public:
 	Editor(SDL_Window* window, string projName);
 
-	void Update(float deltaTime, vector<GameObject*>& go);
+	void Update(float deltaTime, vector<GameObject*>* pGo);
 };

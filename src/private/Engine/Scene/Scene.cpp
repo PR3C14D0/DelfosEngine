@@ -18,7 +18,7 @@ void Scene::AddObject(GameObject* pGo) {
 void Scene::Update(float deltaTime) {;
 	this->totalTime += (deltaTime);
 	this->ActualCamera->Update(deltaTime);
-	editor->Update(deltaTime, this->go);
+	editor->Update(deltaTime, &this->go);
 	for (GameObject* g : go)
 		g->Update(deltaTime);
 }
